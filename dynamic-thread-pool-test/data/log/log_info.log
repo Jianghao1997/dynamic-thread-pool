@@ -1,0 +1,274 @@
+24-05-17.14:35:24.942 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_412 on Ericbook.local with PID 83576 (started by wang in /Users/wang/project/dynamic-thread-pool/dynamic-thread-pool-test)
+24-05-17.14:35:24.943 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-05-17.14:35:25.458 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-05-17.14:35:25.460 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-05-17.14:35:25.474 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+24-05-17.14:35:26.626 [main            ] INFO  Version                - Redisson 3.26.0
+24-05-17.14:35:26.662 [main            ] WARN  DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+24-05-17.14:35:26.811 [redisson-netty-1-10] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:35:26.819 [redisson-netty-1-23] INFO  ConnectionsHolder      - 10 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:35:26.847 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic thread pool => register（redis）config complete。[127.0.0.1] [64] [true]
+24-05-17.14:35:26.859 [main            ] INFO  DynamicThreadPoolAutoConfig - application info => applicationName:[dynamic-thread-pool-test-app], active:[dev]
+24-05-17.14:35:27.286 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-05-17.14:35:27.332 [main            ] INFO  ApiTest                - Started ApiTest in 2.669 seconds (JVM running for 3.388)
+24-05-17.14:35:27.568 [redisson-netty-1-3] ERROR CommandPubSubDecoder   - Unable to decode data. channel: [id: 0xef2f3d14, L:/127.0.0.1:53126 - R:127.0.0.1/127.0.0.1:6379], reply: ReplayingDecoderByteBuf(ridx=380, widx=380)
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.hoodee.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (io.netty.buffer.ByteBufInputStream); line: 1, column: 102]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1904)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1349)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1415)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:220)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:187)
+	at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer._deserializeTypedForId(AsPropertyTypeDeserializer.java:144)
+	at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer.deserializeTypedFromObject(AsPropertyTypeDeserializer.java:110)
+	at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer.deserializeTypedFromAny(AsPropertyTypeDeserializer.java:213)
+	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:781)
+	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:74)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3666)
+	at org.redisson.codec.JsonJacksonCodec$2.decode(JsonJacksonCodec.java:99)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:433)
+	at org.redisson.client.handler.CommandDecoder.decodeList(CommandDecoder.java:490)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:442)
+	at org.redisson.client.handler.CommandPubSubDecoder.decodeCommand(CommandPubSubDecoder.java:92)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:144)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:94)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:529)
+	at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:366)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+24-05-17.14:35:27.573 [redisson-netty-1-3] ERROR ErrorsLoggingHandler   - Exception occured. Channel: [id: 0xef2f3d14, L:/127.0.0.1:53126 - R:127.0.0.1/127.0.0.1:6379]
+io.netty.handler.codec.DecoderException: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.hoodee.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (io.netty.buffer.ByteBufInputStream); line: 1, column: 102]
+	at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:421)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `com.hoodee.middleware.dynamic.thread.pool.sdk.domain.model.entity.ThreadPoolConfigEntity` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (io.netty.buffer.ByteBufInputStream); line: 1, column: 102]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1904)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1349)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1415)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:352)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:220)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:187)
+	at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer._deserializeTypedForId(AsPropertyTypeDeserializer.java:144)
+	at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer.deserializeTypedFromObject(AsPropertyTypeDeserializer.java:110)
+	at com.fasterxml.jackson.databind.jsontype.impl.AsPropertyTypeDeserializer.deserializeTypedFromAny(AsPropertyTypeDeserializer.java:213)
+	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:781)
+	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:74)
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:323)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4674)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3666)
+	at org.redisson.codec.JsonJacksonCodec$2.decode(JsonJacksonCodec.java:99)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:433)
+	at org.redisson.client.handler.CommandDecoder.decodeList(CommandDecoder.java:490)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:442)
+	at org.redisson.client.handler.CommandPubSubDecoder.decodeCommand(CommandPubSubDecoder.java:92)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:144)
+	at org.redisson.client.handler.CommandDecoder.decode(CommandDecoder.java:94)
+	at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:529)
+	at io.netty.handler.codec.ReplayingDecoder.callDecode(ReplayingDecoder.java:366)
+	... 17 common frames omitted
+24-05-17.14:35:40.250 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:35:40.257 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:35:40.259 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:36:00.012 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:36:00.014 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:36:00.016 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:36:20.026 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:36:20.037 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:36:20.040 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:36:40.036 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:36:40.038 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:36:40.040 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:37:00.018 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:37:00.026 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:37:00.030 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:37:06.334 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_412 on Ericbook.local with PID 83730 (started by wang in /Users/wang/project/dynamic-thread-pool/dynamic-thread-pool-test)
+24-05-17.14:37:06.335 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-05-17.14:37:06.868 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-05-17.14:37:06.871 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-05-17.14:37:06.886 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-05-17.14:37:08.008 [main            ] INFO  Version                - Redisson 3.26.0
+24-05-17.14:37:08.037 [main            ] WARN  DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+24-05-17.14:37:08.181 [redisson-netty-1-12] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:37:08.188 [redisson-netty-1-23] INFO  ConnectionsHolder      - 10 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:37:08.215 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic thread pool => register（redis）config complete。[127.0.0.1] [64] [true]
+24-05-17.14:37:08.227 [main            ] INFO  DynamicThreadPoolAutoConfig - application info => applicationName:[dynamic-thread-pool-test-app], active:[dev]
+24-05-17.14:37:08.563 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-05-17.14:37:08.608 [main            ] INFO  ApiTest                - Started ApiTest in 2.584 seconds (JVM running for 3.289)
+24-05-17.14:37:14.001 [redisson-3-12   ] INFO  ThreadPoolConfigAdjustListener - dynamic thread pool => receive message, thread name: [threadPoolExecutor01] core thread size: [0] max thread size: [100]
+24-05-17.14:38:21.458 [redisson-3-12   ] INFO  ThreadPoolConfigAdjustListener - dynamic thread pool => report thread pool config parameter success
+24-05-17.14:38:21.708 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":0,"maximumPoolSize":100,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:38:21.711 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":0,"maximumPoolSize":100,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:38:21.714 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:39:21.799 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_412 on Ericbook.local with PID 83858 (started by wang in /Users/wang/project/dynamic-thread-pool/dynamic-thread-pool-test)
+24-05-17.14:39:21.800 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-05-17.14:39:22.302 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-05-17.14:39:22.304 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-05-17.14:39:22.318 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-05-17.14:39:23.454 [main            ] INFO  Version                - Redisson 3.26.0
+24-05-17.14:39:23.483 [main            ] WARN  DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+24-05-17.14:39:23.628 [redisson-netty-1-11] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:39:23.635 [redisson-netty-1-23] INFO  ConnectionsHolder      - 10 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:39:23.662 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic thread pool => register（redis）config complete。[127.0.0.1] [64] [true]
+24-05-17.14:39:23.675 [main            ] INFO  DynamicThreadPoolAutoConfig - application info => applicationName:[dynamic-thread-pool-test-app], active:[dev]
+24-05-17.14:39:24.019 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-05-17.14:39:24.059 [main            ] INFO  ApiTest                - Started ApiTest in 2.523 seconds (JVM running for 3.156)
+24-05-17.14:39:27.639 [redisson-3-12   ] INFO  ThreadPoolConfigAdjustListener - dynamic thread pool => receive message, thread name: [threadPoolExecutor01] core thread size: [100] max thread size: [100]
+24-05-17.14:39:32.347 [redisson-3-12   ] INFO  ThreadPoolConfigAdjustListener - dynamic thread pool => report thread pool config parameter success
+24-05-17.14:39:40.248 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":100,"maximumPoolSize":100,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:39:40.258 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":100,"maximumPoolSize":100,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:39:40.260 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}
+24-05-17.14:52:18.864 [main            ] INFO  ApiTest                - Starting ApiTest using Java 1.8.0_412 on Ericbook.local with PID 84647 (started by wang in /Users/wang/project/dynamic-thread-pool/dynamic-thread-pool-test)
+24-05-17.14:52:18.865 [main            ] INFO  ApiTest                - The following 1 profile is active: "dev"
+24-05-17.14:52:19.398 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-05-17.14:52:19.400 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-05-17.14:52:19.415 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+24-05-17.14:52:20.570 [main            ] INFO  Version                - Redisson 3.26.0
+24-05-17.14:52:20.605 [main            ] WARN  DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+24-05-17.14:52:20.746 [redisson-netty-1-12] INFO  ConnectionsHolder      - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:52:20.753 [redisson-netty-1-23] INFO  ConnectionsHolder      - 10 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-05-17.14:52:20.777 [main            ] INFO  DynamicThreadPoolAutoConfig - dynamic thread pool => register（redis）config complete。[127.0.0.1] [64] [true]
+24-05-17.14:52:20.791 [main            ] INFO  DynamicThreadPoolAutoConfig - application info => applicationName:[dynamic-thread-pool-test-app], active:[dev]
+24-05-17.14:52:21.159 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-05-17.14:52:21.199 [main            ] INFO  ApiTest                - Started ApiTest in 2.609 seconds (JVM running for 3.245)
+24-05-17.14:52:29.521 [pool-2-thread-1 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-1]
+24-05-17.14:52:29.521 [pool-2-thread-2 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-2]
+24-05-17.14:52:31.872 [pool-2-thread-3 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-3]
+24-05-17.14:52:31.872 [pool-2-thread-4 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-4]
+24-05-17.14:52:31.872 [pool-2-thread-5 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-5]
+24-05-17.14:52:31.873 [pool-2-thread-6 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-6]
+24-05-17.14:52:31.873 [pool-2-thread-7 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-7]
+24-05-17.14:52:31.873 [pool-2-thread-8 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-8]
+24-05-17.14:52:31.873 [pool-2-thread-9 ] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-9]
+24-05-17.14:52:31.873 [pool-2-thread-10] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-10]
+24-05-17.14:52:31.874 [pool-2-thread-11] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-11]
+24-05-17.14:52:31.874 [pool-2-thread-12] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-12]
+24-05-17.14:52:31.874 [pool-2-thread-13] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-13]
+24-05-17.14:52:31.874 [pool-2-thread-14] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-14]
+24-05-17.14:52:31.874 [pool-2-thread-15] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-15]
+24-05-17.14:52:31.874 [pool-2-thread-16] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-16]
+24-05-17.14:52:31.874 [pool-2-thread-17] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-17]
+24-05-17.14:52:31.875 [pool-2-thread-18] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-18]
+24-05-17.14:52:31.875 [pool-2-thread-19] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-19]
+24-05-17.14:52:31.875 [pool-2-thread-20] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-20]
+24-05-17.14:52:31.875 [pool-2-thread-21] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-21]
+24-05-17.14:52:31.875 [pool-2-thread-22] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-22]
+24-05-17.14:52:31.875 [pool-2-thread-23] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-23]
+24-05-17.14:52:31.875 [pool-2-thread-24] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-24]
+24-05-17.14:52:31.875 [pool-2-thread-25] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-25]
+24-05-17.14:52:31.876 [pool-2-thread-26] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-26]
+24-05-17.14:52:31.876 [pool-2-thread-27] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-27]
+24-05-17.14:52:31.876 [pool-2-thread-28] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-28]
+24-05-17.14:52:31.876 [pool-2-thread-29] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-29]
+24-05-17.14:52:31.876 [pool-2-thread-30] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-30]
+24-05-17.14:52:31.876 [pool-2-thread-31] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-31]
+24-05-17.14:52:31.877 [pool-2-thread-32] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-32]
+24-05-17.14:52:31.877 [pool-2-thread-33] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-33]
+24-05-17.14:52:31.877 [pool-2-thread-34] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-34]
+24-05-17.14:52:31.877 [pool-2-thread-36] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-36]
+24-05-17.14:52:31.877 [pool-2-thread-35] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-35]
+24-05-17.14:52:31.878 [pool-2-thread-38] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-38]
+24-05-17.14:52:31.878 [pool-2-thread-37] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-37]
+24-05-17.14:52:31.878 [pool-2-thread-39] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-39]
+24-05-17.14:52:31.878 [pool-2-thread-40] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-40]
+24-05-17.14:52:31.878 [pool-2-thread-41] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-41]
+24-05-17.14:52:31.878 [pool-2-thread-42] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-42]
+24-05-17.14:52:31.879 [pool-2-thread-43] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-43]
+24-05-17.14:52:31.879 [pool-2-thread-44] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-44]
+24-05-17.14:52:31.879 [pool-2-thread-45] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-45]
+24-05-17.14:52:31.879 [pool-2-thread-46] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-46]
+24-05-17.14:52:31.879 [pool-2-thread-47] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-47]
+24-05-17.14:52:31.879 [pool-2-thread-48] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-48]
+24-05-17.14:52:31.879 [pool-2-thread-49] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-49]
+24-05-17.14:52:31.879 [pool-2-thread-51] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-51]
+24-05-17.14:52:31.879 [pool-2-thread-50] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-50]
+24-05-17.14:52:31.880 [pool-2-thread-53] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-53]
+24-05-17.14:52:31.880 [pool-2-thread-52] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-52]
+24-05-17.14:52:31.880 [pool-2-thread-54] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-54]
+24-05-17.14:52:31.880 [pool-2-thread-55] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-55]
+24-05-17.14:52:31.880 [pool-2-thread-56] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-56]
+24-05-17.14:52:31.881 [pool-2-thread-57] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-57]
+24-05-17.14:52:31.881 [pool-2-thread-59] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-59]
+24-05-17.14:52:31.881 [pool-2-thread-58] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-58]
+24-05-17.14:52:31.881 [pool-2-thread-60] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-60]
+24-05-17.14:52:31.881 [pool-2-thread-61] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-61]
+24-05-17.14:52:31.881 [pool-2-thread-62] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-62]
+24-05-17.14:52:31.881 [pool-2-thread-63] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-63]
+24-05-17.14:52:31.881 [pool-2-thread-64] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-64]
+24-05-17.14:52:31.881 [pool-2-thread-65] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-65]
+24-05-17.14:52:31.881 [pool-2-thread-66] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-66]
+24-05-17.14:52:31.881 [pool-2-thread-67] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-67]
+24-05-17.14:52:31.881 [pool-2-thread-68] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-68]
+24-05-17.14:52:31.882 [pool-2-thread-69] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-69]
+24-05-17.14:52:31.882 [pool-2-thread-70] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-70]
+24-05-17.14:52:31.882 [pool-2-thread-71] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-71]
+24-05-17.14:52:31.882 [pool-2-thread-72] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-72]
+24-05-17.14:52:31.882 [pool-2-thread-73] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-73]
+24-05-17.14:52:31.882 [pool-2-thread-76] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-76]
+24-05-17.14:52:31.882 [pool-2-thread-77] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-77]
+24-05-17.14:52:31.882 [pool-2-thread-78] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-78]
+24-05-17.14:52:31.882 [pool-2-thread-75] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-75]
+24-05-17.14:52:31.882 [pool-2-thread-79] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-79]
+24-05-17.14:52:31.882 [pool-2-thread-74] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-74]
+24-05-17.14:52:31.883 [pool-2-thread-80] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-80]
+24-05-17.14:52:31.883 [pool-2-thread-81] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-81]
+24-05-17.14:52:31.883 [pool-2-thread-82] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-82]
+24-05-17.14:52:31.883 [pool-2-thread-83] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-83]
+24-05-17.14:52:31.883 [pool-2-thread-84] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-84]
+24-05-17.14:52:31.883 [pool-2-thread-85] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-85]
+24-05-17.14:52:31.883 [pool-2-thread-86] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-86]
+24-05-17.14:52:31.883 [pool-2-thread-87] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-87]
+24-05-17.14:52:31.884 [pool-2-thread-88] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-88]
+24-05-17.14:52:31.884 [pool-2-thread-89] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-89]
+24-05-17.14:52:31.884 [pool-2-thread-90] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-90]
+24-05-17.14:52:31.884 [pool-2-thread-91] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-91]
+24-05-17.14:52:31.884 [pool-2-thread-92] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-92]
+24-05-17.14:52:31.884 [pool-2-thread-93] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-93]
+24-05-17.14:52:31.884 [pool-2-thread-94] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-94]
+24-05-17.14:52:31.884 [pool-2-thread-95] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-95]
+24-05-17.14:52:31.884 [pool-2-thread-97] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-97]
+24-05-17.14:52:31.884 [pool-2-thread-96] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-96]
+24-05-17.14:52:31.885 [pool-2-thread-98] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-98]
+24-05-17.14:52:31.885 [pool-2-thread-99] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-99]
+24-05-17.14:52:31.885 [pool-2-thread-100] INFO  ApiTest                - threadPoolExecutor01 => [pool-2-thread-100]
+24-05-17.14:52:40.236 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPool success threadPoolConfigEntities:[{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":100,"maximumPoolSize":100,"poolSize":100,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"},{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}]
+24-05-17.14:52:40.239 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":100,"maximumPoolSize":100,"poolSize":100,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor01"}
+24-05-17.14:52:40.240 [scheduling-1    ] INFO  ThreadPoolDataReportJob - reportThreadPoolConfigParameter success, threadPoolConfigEntity:{"activeCount":0,"appName":"dynamic-thread-pool-test-app","corePoolSize":20,"maximumPoolSize":50,"poolSize":0,"queueSize":0,"queueType":"LinkedBlockingQueue","remainingCapacity":5000,"threadPoolName":"threadPoolExecutor02"}

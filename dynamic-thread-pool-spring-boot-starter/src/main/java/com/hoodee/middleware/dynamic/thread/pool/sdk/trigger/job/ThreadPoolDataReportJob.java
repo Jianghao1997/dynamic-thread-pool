@@ -1,4 +1,4 @@
-package com.hoodee.middleware.dynamic.thread.pool.sdk.trigger;
+package com.hoodee.middleware.dynamic.thread.pool.sdk.trigger.job;
 
 import com.alibaba.fastjson2.JSON;
 import com.hoodee.middleware.dynamic.thread.pool.sdk.domain.IDynamicThreadPoolService;
