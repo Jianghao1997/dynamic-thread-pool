@@ -9,7 +9,6 @@ import com.hoodee.middleware.dynamic.thread.pool.sdk.trigger.job.ThreadPoolDataR
 import com.hoodee.middleware.dynamic.thread.pool.sdk.trigger.listener.ThreadPoolConfigAdjustListener;
 import org.apache.commons.lang.StringUtils;
 import org.redisson.Redisson;
-import org.redisson.api.RBucket;
 import org.redisson.api.RTopic;
 import org.redisson.api.RedissonClient;
 import org.redisson.codec.JsonJacksonCodec;
